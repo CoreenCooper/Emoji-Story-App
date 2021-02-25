@@ -28,7 +28,7 @@ Build a website with the following user stories:
 
 - The 'Generate Emoji Story' button should have `id="generate-story-btn"`
 - There should be an `input[type="number"]` with `id="story-length-input"` 
-- Clicking `#generate-story-btn` should add a random emoji story with the right length to an HTML element with `id="emoji-story"`
+- * Clicking `#generate-story-btn` should add a random emoji story with the right length to an HTML element with `id="emoji-story"`
 
 - There should be an `input[type="text"]` with `id="description-input"`
 - The 'Submit Story Description' button should have `id="submit-description-btn"`
@@ -37,7 +37,7 @@ Build a website with the following user stories:
 - Your emoji story history items should be `li` elements.
 - The only `li` elements should be your emoji history items
 - The title of your emoji story history list should be an `h2` tag with `id="history-title"`
-- The text of `#history-title` should say '0 Saved Stories', '1 Saved Story', or '${n} Saved Stories', where `n` is more than 1.
+- * The text of `#history-title` should say '0 Saved Stories', '1 Saved Story', or '${n} Saved Stories', where `n` is more than 1.
 - You may include any emojis you like in your random emoji stories. Here's one collection you could use (feel free to add or remove emojis!):
 
 ```javascript
