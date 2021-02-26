@@ -15,14 +15,15 @@
   <h1>Emoji Stories App</h1>
 
   <p id="emoji-story">Story:</p>
+  <form>
+    <label for="story-length-input">Length:</label>
+    <input id="story-length-input" type="number">
+    <button id="generate-story-btn">Generate Emoji Story</button>
 
-  <label for="story-length-input">Length:</label>
-  <input id="story-length-input" type="number">
-  <button id="generate-story-btn">Generate Emoji Story</button>
-
-  <label for="description-input">Description: </label>
-  <input id="description-input" type="text">
-  <button id="submit-description-btn">Submit Story Description</button>
+    <label for="description-input">Description: </label>
+    <input id="description-input" type="text">
+    <button id="submit-description-btn" type="submit">Submit Story Description</button>
+  </form>
 
   <h2 id="history-title">0 Saved Stories</h2>
   <ul></ul>
