@@ -1,31 +1,38 @@
-// 1. create a button
-// - grab form add event listenter submit 
-// - add preventDefault()
-// 2. grab user input for length of emojis
-// 3. generate random emojis
-// - Math.round
-// 4. display emjois - grab ptag
-const storyButton = document.querySelector("#generate-story-btn") // grab button
-const storyForm = document.querySelector("#generate-story-form");
+// generate emojis
+const storyButton = document.querySelector("#generate-story-btn"); // grab button
 const storyLength = document.querySelector("#story-length-input"); // grab user input
-const emojiStory = document.querySelector("#emoji-story");
+const emojiStory = document.querySelector("#emoji-story"); // display emojis
+
+// display description
+const descriptionButton = document.querySelector("#submit-description-btn"); // grab button
+const descriptionInput = document.querySelector("#description-input"); // grab user input
+const ul = document.querySelector("ul") // display list items
+
+const generateStory = () => {
+  const userTextInput = descriptionInput.value;
+  const li = document.createElement("li");
+  li.textContent = userTextInput;
+  ul.appendChild(li);
+};
 
 const generateEmojis = () => {
-    const userInput = Number(storyLength.value); // get input value
-    for (let i = 0; i < userInput; i++) {
-        const randomIdx = Math.floor(Math.random() * (emojis.length - 1));
-        emojiStory.textContent += emojis[randomIdx];   
-    }
-}
+  const userNumInput = Number(storyLength.value); // get input value
+  for (let i = 0; i < userNumInput; i++) {
+    const randomIdx = Math.floor(Math.random() * (emojis.length - 1));
+    emojiStory.textContent += emojis[randomIdx];
+  }
+};
 
-storyForm.addEventListener("click", (event) => {
-    event.preventDefault();
-})
+descriptionButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  generateStory();
+});
 
-storyButton.addEventListener("click" , generateEmojis)
+storyButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  generateEmojis();
+});
 
-debugger
+// storyButton.addEventListener("click" , generateEmojis)
 
-
-// storyButton.addEventListener("click", () => {})
-
+debugger;
