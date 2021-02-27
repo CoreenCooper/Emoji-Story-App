@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="emojiStoriesArray.js" defer></script>
-  <script src="emojiStories.js" defer></script>
+  <!-- <script src="emojiStories.js" defer></script> -->
+  <script src="emojiStories2.js" defer></script>
   <title>Emoji Stories App</title>
 </head>
 
@@ -15,11 +16,14 @@
   <h1>Emoji Stories App</h1>
 
   <p id="emoji-story">Story:</p>
-  <form>
+
+  <form id="generate-story-form">
     <label for="story-length-input">Length:</label>
     <input id="story-length-input" type="number">
     <button id="generate-story-btn">Generate Emoji Story</button>
+  </form>
 
+  <form id="submit-description-form">
     <label for="description-input">Description: </label>
     <input id="description-input" type="text">
     <button id="submit-description-btn" type="submit">Submit Story Description</button>
