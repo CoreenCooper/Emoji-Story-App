@@ -7,13 +7,16 @@ let emojiPicks = "";
 // display description
 const descriptionButton = document.querySelector("#submit-description-btn"); // grab button
 const descriptionInput = document.querySelector("#description-input"); // grab user input
-const ul = document.querySelector("ul") // display list items
+const ul = document.querySelector("ul"); // display list items
+const h2 = document.querySelector("h2");
+let n = 1;
 
 const generateStory = () => {
   const userTextInput = descriptionInput.value;
   const li = document.createElement("li");
   li.textContent = `${emojiPicks} ${userTextInput}`;
   ul.appendChild(li);
+  h2.textContent = `${n++} Saved Stories`;
 };
 
 const generateEmojis = () => {
@@ -22,7 +25,7 @@ const generateEmojis = () => {
     const randomIdx = Math.floor(Math.random() * (emojis.length - 1));
     emojiPicks += emojis[randomIdx];
   }
-  emojiStory.textContent = `Story: ${emojiPicks}`
+  emojiStory.textContent = `Story: ${emojiPicks}`;
 };
 
 descriptionButton.addEventListener("click", (event) => {
