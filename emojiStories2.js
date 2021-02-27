@@ -8,22 +8,25 @@ let emojiPicks = "";
 const descriptionButton = document.querySelector("#submit-description-btn"); // grab button
 const descriptionInput = document.querySelector("#description-input"); // grab user input
 const ul = document.querySelector("ul"); // display list items
-const h2 = document.querySelector("h2");
-let n = 1;
+const h2 = document.querySelector("#history-title");
+let n = 0;
 
 const generateStory = () => {
   const userTextInput = descriptionInput.value;
   const li = document.createElement("li");
-  li.textContent = `${emojiPicks} ${userTextInput}`;
+  li.textContent = `${emojiPicks} ${userTextInput} ${emojiPicks.length / 2}`; // why is this doubling?
   ul.appendChild(li);
-  h2.textContent = `${n++} Saved Stories`;
+  n++
+  h2.textContent = n === 1 ? `1 Saved Story` : `${n} Saved Stories`;
 };
 
 const generateEmojis = () => {
+  emojiPicks = "";
   const userNumInput = Number(storyLength.value); // get input value
   for (let i = 0; i < userNumInput; i++) {
     const randomIdx = Math.floor(Math.random() * (emojis.length - 1));
     emojiPicks += emojis[randomIdx];
+    storyLength.value = "";
   }
   emojiStory.textContent = `Story: ${emojiPicks}`;
 };
@@ -37,7 +40,3 @@ storyButton.addEventListener("click", (event) => {
   event.preventDefault();
   generateEmojis();
 });
-
-// storyButton.addEventListener("click" , generateEmojis)
-
-debugger;
