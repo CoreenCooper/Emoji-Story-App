@@ -2,6 +2,7 @@
 const storyButton = document.querySelector("#generate-story-btn"); // grab button
 const storyLength = document.querySelector("#story-length-input"); // grab user input
 const emojiStory = document.querySelector("#emoji-story"); // display emojis
+let emojiPicks = "";
 
 // display description
 const descriptionButton = document.querySelector("#submit-description-btn"); // grab button
@@ -11,7 +12,7 @@ const ul = document.querySelector("ul") // display list items
 const generateStory = () => {
   const userTextInput = descriptionInput.value;
   const li = document.createElement("li");
-  li.textContent = userTextInput;
+  li.textContent = `${emojiPicks} ${userTextInput}`;
   ul.appendChild(li);
 };
 
@@ -19,8 +20,9 @@ const generateEmojis = () => {
   const userNumInput = Number(storyLength.value); // get input value
   for (let i = 0; i < userNumInput; i++) {
     const randomIdx = Math.floor(Math.random() * (emojis.length - 1));
-    emojiStory.textContent += emojis[randomIdx];
+    emojiPicks += emojis[randomIdx];
   }
+  emojiStory.textContent = `Story: ${emojiPicks}`
 };
 
 descriptionButton.addEventListener("click", (event) => {
