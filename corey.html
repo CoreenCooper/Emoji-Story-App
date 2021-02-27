@@ -5,18 +5,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="coreyArray.js" defer></script>
-    <script src="corey.js" defer></script>
+    <script src="./coreyArray.js" defer></script>
+    <script src="./corey.js" defer></script>
     <title>Emoji Stories App</title>
 </head>
 
 <body>
-    <h1>Emoji Stories App</h1>
-    <section>
 
+    <h1>Emoji Stories App</h1>
+
+    <section>
+        <p id="emoji-story">Story: </p>
+
+        <form>
+            <label>Length: 
+                <input id="story-length-input" type="number" min="0" max="25" />
+                <button id="generate-story-btn" type="submit">Generate Emoji Story</button>
+            </label>
+        </form>
+
+        <form>
+            <label>Description: 
+                <input type="text" id="description-input"/>
+                <button type="submit">Submit Description</button>
+            </label>
+        </form>
     </section>
+
     <section>
         <h2>0 Saved Stories</h2>
+        <ul></ul>
     </section>
 
 
