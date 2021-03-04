@@ -7,31 +7,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="emojiStoriesArray.js" defer></script>
   <script src="emojiStories.js" defer></script>
+  <link rel="stylesheet" href="./emojiStories.css">
   <title>Emoji Stories App</title>
 </head>
 
 <body>
-
   <h1>Emoji Stories App</h1>
-
+<section>
   <p id="emoji-story">Story: </p>
-
   <form id="generate-story-form">
     <label for="story-length-input">Length:</label>
-    <input id="story-length-input" type="number">
+    <input id="story-length-input" type="number" value="0" min="0" max="50">
     <button id="generate-story-btn">Generate Emoji Story</button>
   </form>
-
+  
   <form id="submit-description-form">
     <label for="description-input">Description: </label>
     <input id="description-input" type="text">
     <button id="submit-description-btn" type="submit">Submit Story Description</button>
   </form>
-
+</section>
+<section>
   <h2 id="history-title">0 Saved Stories</h2>
   <ul></ul>
-
-
+</section>
 </body>
 
 </html>

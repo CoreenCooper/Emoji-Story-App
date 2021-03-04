@@ -17,23 +17,23 @@
     <section>
         <p id="emoji-story">Story: </p>
 
-        <form>
+        <form id="length-form">
             <label>Length: 
                 <input id="story-length-input" type="number" min="0" max="25" />
                 <button id="generate-story-btn" type="submit">Generate Emoji Story</button>
             </label>
         </form>
 
-        <form>
+        <form id="description-form">
             <label>Description: 
-                <input type="text" id="description-input"/>
+                <input type="text" id="description-input" placeholder="Story Description" required/>
                 <button type="submit">Submit Description</button>
             </label>
         </form>
     </section>
 
     <section>
-        <h2>0 Saved Stories</h2>
+        <h2 id="history-title">0 Saved Stories</h2>
         <ul></ul>
     </section>
 

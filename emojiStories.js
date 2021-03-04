@@ -11,35 +11,38 @@ const ul = document.querySelector("ul"); // display list items
 const h2 = document.querySelector("#history-title"); // grab Saved Stories
 let n = 0; // update stories saved
 
-const generateStory = () => {
+const generateStory = (event) => {
+  event.preventDefault();
   const userTextInput = descriptionInput.value;
   const li = document.createElement("li");
   li.textContent = `${emojiPicks} ${userTextInput}`;
-  ul.appendChild(li); // how do you access the length of li's that have been created?
+  ul.appendChild(li); // how do you access the length of li's that have been created? use querySelector all
   n++
   h2.textContent = n === 1 ? `1 Saved Story` : `${n} Saved Stories`;
+  resetStory()
 };
 
-const generateEmojis = () => {
+const resetStory = () => {
+  storyLength.value = 0;
+  descriptionInput.value = "";
+  emojiStory.textContent = "";
+}
+
+const generateEmojis = (event) => {
+  event.preventDefault();
   emojiPicks = "";
   const userNumInput = Number(storyLength.value); // get input value
   for (let i = 0; i < userNumInput; i++) {
-    const randomIdx = Math.floor(Math.random() * (emojis.length - 1));
+    const randomIdx = Math.floor(Math.random() * emojis.length);
     emojiPicks += emojis[randomIdx];
-    storyLength.value = "";
   }
+  
   emojiStory.textContent = `Story: ${emojiPicks}`;
 };
 
-descriptionForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  generateStory();
-});
+descriptionForm.addEventListener("submit", generateStory);
 
-storyForm .addEventListener("submit", (event) => {
-  event.preventDefault();
-  generateEmojis();
-});
+storyForm .addEventListener("submit", generateEmojis);
 
 //// Vanessa - https://blog.jonnew.com/posts/poo-dot-length-equals-two
 
