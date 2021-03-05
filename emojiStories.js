@@ -34,7 +34,7 @@ const generateEmojis = (event) => {
   const userNumInput = Number(storyLength.value); // get input value
   for (let i = 0; i < userNumInput; i++) {
     const randomIdx = Math.floor(Math.random() * emojis.length);
-    emojiPicks += emojis[randomIdx];
+    emojiPicks += `${emojis[randomIdx]} `;
   }
   
   emojiStory.textContent = `Story: ${emojiPicks}`;
